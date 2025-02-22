@@ -32,5 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action'])) {
     }
 }
 
+// Ungültige Anfrage
 header("Location: dashboard.php?error=invalid_request");
 exit();
