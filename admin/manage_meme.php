@@ -9,11 +9,16 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action'])) {
     if ($_POST['action'] == "stop") {
-        // Aktiven Wettbewerb beenden
+        // Wettbewerb beenden
         $stmt = $pdo->prepare("UPDATE competition_status SET is_active = 0 WHERE is_active = 1");
         $stmt->execute();
+    
+        // Alle Memes in die Library verschieben
+        $stmt = $pdo->prepare("UPDATE memes SET status = 'archived' WHERE status = 'approved'");
+        $stmt->execute();
+    
         header("Location: dashboard.php?success=stopped");
-        exit();
+        exit();    
     } elseif ($_POST['action'] == "restart") {
         // Alten Wettbewerb beenden
         $pdo->prepare("UPDATE competition_status SET is_active = 0 WHERE is_active = 1")->execute();
