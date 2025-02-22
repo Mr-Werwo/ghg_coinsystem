@@ -1,0 +1,256 @@
+/* 🔹 Allgemeine Stile */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0a0f1f;
+    color: #d0d9ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 🔹 Neon-Texteffekt */
+.neon-text {
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 40px #007a99;
+}
+
+/* 🔹 Navigation */
+nav {
+    background: #121826;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #00eaff;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 10px #00eaff;
+}
+
+/* 🔹 Haupt-Container */
+.container {
+    width: 80%;
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(10, 15, 31, 0.85);
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.3);
+    border-radius: 15px;
+}
+
+/* 🔹 Login-Bereich */
+.login-container {
+    background: rgba(0, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+/* 🔹 Buttons */
+button {
+    background: #00eaff;
+    color: black;
+    font-size: 16px;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #007a99;
+    box-shadow: 0px 0px 10px #00eaff;
+}
+
+/* 🔹 Logout-Button */
+.btn-logout {
+    display: inline-block;
+    background: red;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-logout:hover {
+    background: darkred;
+    box-shadow: 0 0 10px red;
+}
+
+/* 🔹 Fehleranzeige */
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* 🔹 Meme-Galerie */
+.meme-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* 🔹 Meme-Karten */
+.meme-card {
+    background: rgba(10, 15, 31, 0.95);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.meme-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+}
+
+/* 🔹 Meme-Bild */
+.meme-card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.meme-card img:hover {
+    transform: scale(1.1);
+}
+
+/* 🔹 Like-Buttons */
+.meme-actions button {
+    background: #00eaff;
+    color: black;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.meme-actions button:hover {
+    background: #007a99;
+    box-shadow: 0px 0px 10px #00eaff;
+}
+
+/* 🔹 Kommentarbereich */
+.comments {
+    background: rgba(0, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* 🔹 Top Navigation */
+.top-bar {
+    width: 100%;
+    background: #121826;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.2);
+}
+
+/* 🔹 Navigation Buttons */
+.btn-nav {
+    background: #00eaff;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-nav:hover {
+    background: #007a99;
+    box-shadow: 0px 0px 10px #00eaff;
+}
+
+
+/* 🔹 Meme-Galerie */
+.meme-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* 🔹 Meme-Karten */
+.meme-card {
+    background: rgba(10, 15, 31, 0.95);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.meme-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+}
+
+/* 🔹 Buttons */
+.btn-approve {
+    background: #4caf50;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-reject {
+    background: #e53935;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-delete {
+    background: #ff9800;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-delete-comment {
+    background: #ff5722;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
