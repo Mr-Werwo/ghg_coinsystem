@@ -2,15 +2,18 @@
 session_start();
 require_once '../includes/db.php';
 
-// Alle genehmigten Memes abrufen
-$memes = $pdo->query("
-    SELECT memes.*, users.username 
-    FROM memes 
-    JOIN users ON memes.user_id = users.id 
-    WHERE memes.status = 'approved' 
-    ORDER BY memes.likes DESC, memes.id DESC
-")->fetchAll();
+// Überprüfen, ob ein Wettbewerb aktiv ist
+$competition = $pdo->query("SELECT * FROM competition_status WHERE is_active = 1 LIMIT 1")->fetch();
+
+if (!$competition) {
+    echo "<h2>❌ Derzeit läuft kein Meme-Wettbewerb.</h2>";
+    exit();
+}
+
+// Falls ein Wettbewerb aktiv ist, zeige die Memes an
+$memes = $pdo->query("SELECT * FROM memes WHERE status = 'approved' ORDER BY likes DESC")->fetchAll();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="de">
